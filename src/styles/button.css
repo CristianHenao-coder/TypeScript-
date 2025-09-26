@@ -1,0 +1,19 @@
+.components--button{
+
+    padding: 10px 20px;
+  background-color: #007bff;  /* color de fondo */
+  color: white;               /* color del texto */
+  border: none;               /* sin borde */
+  border-radius: 5px;         /* bordes redondeados */
+  cursor: pointer;            /* cursor tipo mano */
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* animación suave */ 
+
+}
+
+
+.components--button--disabled {
+
+    opacity: 1.5;
+
+}
