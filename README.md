@@ -6,6 +6,14 @@ First, run the development server:
 
 ```bash
 
+
+# dependencias 
+
+npm install next react react-dom
+
+npm install -D typescript @types/react @types/node
+
+
 # descargar packetes node
 npm install
 
