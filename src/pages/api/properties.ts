@@ -25,12 +25,11 @@ export default async function handler(
 
         if (req.method === "GET") {
       dbConnection()
-      const data = await Properties.find()
-      console.log(data)
+      const data = await Properties.find();
 
       res.status(200).json({
         ok: true,
-        data: data as Property[]
+        info: data as Property[],
       });
     }
 

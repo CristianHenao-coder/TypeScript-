@@ -1,22 +1,42 @@
 // index.tsx
 
-import React from "react";
+import React, { useEffect } from "react";
 import Login from "@/components/Login";
 import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 import { getProperties } from "@/services/properties";
+import { useState } from 'react';
 
 
 /**
  * Página principal que renderiza el componente de Login
  */
+export default function Home() {
+
+  const [dataProperties, setDataProperties] = useState([]);
 
 const handlerClick = async ()=> {
 
     const response = await getProperties();
-    console.log (response.data)
+    console.log (response);
+    setDataProperties(response)   
  }
-export default function Home() {
+ 
+console.log(dataProperties)
+
+
+
+useEffect(()=>{
+
+    const fechData = async()=> {
+    const response =await getProperties()
+    setDataProperties(response);
+    console.log("se ejecuto soy el crack UseEffect")
+  }
+    fechData()
+ 
+
+},[])
 
 
   return (
@@ -27,8 +47,8 @@ export default function Home() {
       <button onClick={handlerClick}> llama la api </button>
     </div>
   );
-}
 
+}
 
 
   //-------------------------------------------------
